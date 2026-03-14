@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MUN Speech Generator</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container" id="mainContainer">
+        
+        <div id="authSection" class="auth-card">
+            <h2 id="authTitle">Create Account</h2>
+            <p class="subtitle" id="authSubtitle">Join the MUN Generator.</p>
+            
+            <div class="input-group">
+                <input type="text" id="nameInput" placeholder="Full Name">
+                <input type="email" id="emailInput" placeholder="Email Address">
+                <input type="password" id="passwordInput" placeholder="Password (Min 6 characters)">
+                <input type="password" id="confirmPasswordInput" placeholder="Confirm Password">
+            </div>
+            
+            <div class="auth-buttons">
+                <button id="mainAuthBtn" class="pill-btn">Sign Up</button>
+            </div>
+            
+            <p class="toggle-text">
+                <span id="toggleTextPre">Already have an account?</span> 
+                <span id="toggleAuthMode" class="text-link">Log in here</span>
+            </p>
+
+            <p id="authError" style="color: #ff6b6b; display: none; margin-top: 1rem; font-size: 0.9rem;"></p>
+            <p id="authSuccess" style="color: #69f0ae; display: none; margin-top: 1rem; font-size: 0.9rem;"></p>
+        </div>
+
+        <div id="appSection" class="app-layout" style="display: none;">
+            
+            <aside class="sidebar">
+                <div class="sidebar-header">
+                    <h2 class="greeting"><span class="sparkle">✨</span> MUN Gen</h2>
+                    <button id="closeSidebarBtn" class="mobile-close-btn">✕</button>
+                </div>
+                <button id="newMunBtn" class="pill-btn full-width outline">+ Start New MUN</button>
+                <div class="mun-list" id="munList">
+                    </div>
+                <div class="sidebar-footer">
+                    <button id="logoutBtn" class="pill-btn outline small full-width">Sign Out</button>
+                </div>
+            </aside>
+
+            <main class="main-workspace">
+                
+                <div id="emptyState" class="empty-state">
+                    <button id="mobileMenuBtnEmpty" class="mobile-menu-btn empty-state-btn">☰ Menu</button>
+                    <h2>Select or Start a MUN Committee</h2>
+                    <p>Your generated speeches will be saved to your session.</p>
+                </div>
+
+                <div id="activeMunState" class="active-mun-state" style="display: none;">
+                    
+                    <div class="workspace-header">
+                        <button id="mobileMenuBtn" class="mobile-menu-btn">☰</button>
+                        <h2 id="currentMunTitle">Agenda: Loading...</h2>
+                    </div>
+
+                    <div class="speech-feed" id="speechFeed">
+                        </div>
+
+                    <div class="generator-controls">
+                        <div class="row">
+                            <div class="input-group">
+                                <select id="country">
+                                    </select>
+                            </div>
+                            <div class="input-group">
+                                <select id="speechType">
+                                    <option value="opening">Opening Speech (GSL)</option>
+                                    <option value="moderated">Moderated Caucus</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div id="modCaucusGroup" class="input-group" style="display: none;">
+                            <textarea id="modTopic" rows="1" placeholder="Moderated Caucus Subtopic..."></textarea>
+                        </div>
+
+                        <div class="controls-footer">
+                            <div id="loading" style="display: none;">
+                                <span class="spinner"></span> <span id="loadingText">Drafting...</span>
+                            </div>
+                            <div class="action-buttons">
+                                <button id="stanceBtn" class="pill-btn outline small">Research Stance</button>
+                                <button id="generateBtn" class="pill-btn small">Generate Speech</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+
+    </div>
+
+    <div id="newMunModal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <h3>Start New Committee</h3>
+            <div class="input-group">
+                <label>Main Agenda / Topic</label>
+                <textarea id="newMunAgenda" rows="3" placeholder="e.g., The regulation of AI in warfare"></textarea>
+            </div>
+            <div class="auth-buttons">
+                <button id="createMunBtn" class="pill-btn">Create</button>
+                <button id="cancelMunBtn" class="pill-btn outline">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="script.js"></script>
+</body>
+</html>
