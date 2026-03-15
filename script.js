@@ -24,7 +24,7 @@ const auth = getAuth(app);
 const db = getFirestore(app);
 
 // 3. Your Gemini API Key
-const _0x1a2b = "QUl6YVN5QXpXbTlRREtydFN3Mmd6NWZQRFhtVXBON3p6UUlOU2RN";
+const _0x1a2b = "AIzaSyCMcKuqIF9JF8N-6KUvhKiqQ9vofib9Qz0";
 const GEMINI_API_KEY = atob(_0x1a2b); 
 
 // 4. DOM Elements
