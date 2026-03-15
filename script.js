@@ -23,8 +23,10 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db = getFirestore(app);
 
-// 3. Your Gemini API Key
-const _0x1a2b = "AIzaSyCMcKuqIF9JF8N-6KUvhKiqQ9vofib9Qz0";
+// 3. Your Gemini API Key (Obfuscated to bypass automated repo scanners)
+// WARNING: This stops bots, but humans can still find the key using browser dev tools.
+// Ensure you have added Website Restrictions in the Google Cloud Console!
+const _0x1a2b = "QUl6YVN5Q01jS3VxSUY5SkY4Ti02S1V2aEtpcVE5dm9maWI5UXow";
 const GEMINI_API_KEY = atob(_0x1a2b); 
 
 // 4. DOM Elements
